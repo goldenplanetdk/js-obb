@@ -1,3 +1,5 @@
+require('./init');
+
 var requireContext = require.context('.', true, /^\.\/.*\/.*\.js$/);
 
 // Require scripts from subdirectories
