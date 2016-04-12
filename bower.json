@@ -1,7 +1,7 @@
 {
   "name": "js-obb",
   "main": "index.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/goldenplanetdk/js-obb",
   "authors": [
     "Steven Pribilinskiy <stepan@goldenplanet.com>"
@@ -13,11 +13,9 @@
     "bower_components",
     "test"
   ],
-  "dependencies": {
+  "devDependencies": {
     "jquery": "~2",
     "lodash": "~4",
     "modernizr": "~2"
-  },
-  "devDependencies": {
   }
 }
