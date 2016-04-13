@@ -1,18 +1,12 @@
 {
   "name": "js-obb",
-  "main": "index.js",
-  "version": "0.1.2",
-  "homepage": "https://github.com/goldenplanetdk/js-obb",
+  "description": "Common JavaScript code for OpenBizBox",
+  "version": "1.0.0",
   "authors": [
     "Steven Pribilinskiy <stepan@goldenplanet.com>"
   ],
-  "description": "Common JavaScript code for OpenBizBox",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test"
-  ],
+  "homepage": "https://github.com/goldenplanetdk/js-obb",
+  "main": "index.js",
   "devDependencies": {
     "jquery": "~2",
     "lodash": "~4",
