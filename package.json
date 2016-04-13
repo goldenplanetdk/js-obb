@@ -1,7 +1,7 @@
 {
-  "name": "js-obb",
+  "name": "@goldenplanet/js",
   "description": "Common JavaScript code for OpenBizBox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "Steven Pribilinskiy <stepan@goldenplanet.com>"
   ],
