@@ -1,5 +1,12 @@
-/* Initialize collections
- ----------------------------------------------------------------------*/
+/**
+ * Initialize collections
+ *
+ * {object} obb.components Component modules
+ * {object} obb.constants  Constants
+ * {object} obb.data       Variable data
+ * {object} obb.fn         Helper functions
+ * {object} obb.modules    Modules (deprecated, use `components` namespace for new modules)
+ */
 window.obb = window.obb || {};
 
 _.defaults(obb, {
