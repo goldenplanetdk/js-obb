@@ -16,7 +16,7 @@ _.defaults(obb, {
 	fn: {},
 });
 
-(function() {
+(function(obb, _, $) {
 
 	_.merge(obb.fn, {
 
@@ -88,4 +88,4 @@ _.defaults(obb, {
 		},
 	});
 
-})();
+})(obb, _, $);
