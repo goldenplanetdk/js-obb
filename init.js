@@ -63,7 +63,7 @@ _.defaults(obb, {
 				else {
 					var message = 'module "' + modulePath + '" is not available';
 
-					obb.DEVMODE
+					obb.constants.IS_DEV_MODE
 						? console.error(message)
 						: (obb.jsServerLoggerEnabled ? log(message) : null);
 				}
