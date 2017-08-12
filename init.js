@@ -1,27 +1,20 @@
 /**
- * Initialize collections
+ * Legacy modules initializer
  *
- * {object} obb.components Component modules
- * {object} obb.constants  Constants
- * {object} obb.data       Variable data
- * {object} obb.fn         Helper functions
- * {object} obb.modules    Modules (deprecated, use `components` namespace for new modules)
+ * @typedef {Object}   GPP                       One of these: obb (Legacy) | gppb (Backend) | gppf (Frontend)
+ * @property {Object}  gpp.fn                    Generic functions in global namespace
+ * @property {Object}  gpp.constants             Publicly available constants
+ * @property {Array}   gpp.disabledModules       Modules that must not be initialized
+ * @property {boolean} gpp.jsServerLoggerEnabled Whether nelmio logger is enabled
+ * @property {Object}  gpp.components            Components in Frontend
+ * @property {Object}  gpp.modules               Modules in Backend
  */
-window.obb = window.obb || {};
+(function(/** GPP */ gpp, _, $) {
 
-_.defaults(obb, {
-	components: {},
-	constants: {},
-	data: {},
-	fn: {},
-});
-
-(function(obb, _, $) {
-
-	_.merge(obb.fn, {
+	_.merge(gpp.fn, {
 
 		/**
-		 * OBB JavaScript modules initializer
+		 * GPP JavaScript modules initializer
 		 *
 		 * @param modules
 		 */
@@ -38,7 +31,7 @@ _.defaults(obb, {
 				if (module) {
 					module.initialized = false;
 
-					if (_(obb.disabledModules).includes(modulePath)) {
+					if (_(gpp.disabledModules).includes(modulePath)) {
 						module.disabled = true;
 						return;
 					}
@@ -56,16 +49,16 @@ _.defaults(obb, {
 					}
 
 					if (initialized) {
-						$(document).trigger('obbInitialized.' + modulePath);
+						$(document).trigger('gppInitialized.' + modulePath);
 						module.initialized = true;
 					}
 				}
 				else {
 					var message = 'module "' + modulePath + '" is not available';
 
-					obb.constants.IS_DEV_MODE
+					gpp.constants.IS_DEV_MODE
 						? console.error(message)
-						: (obb.jsServerLoggerEnabled ? log(message) : null);
+						: (gpp.jsServerLoggerEnabled ? log(message) : null);
 				}
 			});
 		},
@@ -80,12 +73,12 @@ _.defaults(obb, {
 		 */
 		initAfter: function(modulePath, callback) {
 
-			if (_.get(obb, modulePath + '.initialized')) {
+			if (_.get(gpp, modulePath + '.initialized')) {
 				callback();
 			} else {
-				$(document).on('obbInitialized.' + modulePath, callback);
+				$(document).on('gppInitialized.' + modulePath, callback);
 			}
 		},
 	});
 
-})(obb, _, $);
+})(window.obb || window.gppb || window.gppf, _, $);

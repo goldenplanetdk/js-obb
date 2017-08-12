@@ -5,7 +5,7 @@
  * @param {*} defaultValue A default value to be set if it is not defined
  * @constructor
  */
-obb.fn.LocalStorageBooleanSetting = function(key, defaultValue) {
+(window.obb || window.gppb || window.gppf).fn.LocalStorageBooleanSetting = function(key, defaultValue) {
 
 	/**
 	 * Retrieve value from local storage and convert to boolean type

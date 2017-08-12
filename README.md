@@ -1,6 +1,6 @@
-## OBB JavaScript shared code
+## GPP JavaScript shared code
 
-Collection of general-purpose in-house JS functions and classes for OpenBizBox apps
+Collection of general-purpose in-house JS functions and classes for GoldenPlanetPlatform apps
 
 ### Requirements
 
@@ -11,10 +11,10 @@ Collection of general-purpose in-house JS functions and classes for OpenBizBox a
 
 To include all scripts use:
 ```
-require('js-obb');
+require('@goldenplanet/js');
 ```
 
-*Note: `webpack` and `ES6` is required*
+*Note: `webpack` and `ES6` are required*
 
 ### Style guides
 
