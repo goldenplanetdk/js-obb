@@ -9,7 +9,7 @@
   "main": "index.js",
   "devDependencies": {
     "jquery": "~3",
-    "lodash": "~4",
+    "lodash": "~4.17.5",
     "modernizr": "~2"
   }
 }
